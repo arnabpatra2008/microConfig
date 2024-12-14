@@ -1,6 +1,6 @@
 spring:
   application:
-    name: HOTEL-SERVICE
+    name: USERSERVICE
 eureka:
   instance:
     prefer-ip-address: true
