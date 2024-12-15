@@ -22,3 +22,18 @@ management:
   endpoint:
     health:
       show-details: always
+      
+      
+resilience4j:
+  circuitbreaker:
+    instances:
+      ratingHotelCircuitBreaker:
+        registerHealthIndicator : true
+        eventConsumerBufferSize: 10
+        failureRateThreasold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNt_BASED
